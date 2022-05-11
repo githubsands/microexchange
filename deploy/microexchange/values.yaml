@@ -1,0 +1,44 @@
+AppName: "micro-exchange"
+
+serviceAccount:
+  create: true
+  name: "microexchange"
+
+ingress:
+  enabled: true
+  className: ""
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+MicroExchange:
+  ENV:
+    name: "micro-exchange"
+    matchingAlgorithm: "BASIC"
+    maxPrice: 150000
+    rowSize: 3000
+    asset: "BTC/ETH"
+  service:
+    type: ClusterIP
+    port: 8080
+
+Trader:
+  ENV:
+    strategy: "BASIC"
+    asset: "BTC/ETH"
+    exchangeURI: "mini-exchange.svc.local"
+  service:
+    type: ClusterIP
+    port: 8080
+
+MarketMaker:
+  ENV:
+    strategy: "MARKET-MAKE-1"
+    asset: "BTC/ETH"
+    exchangeURI: "mini-exchange.svc.local"
+  service:
+    type: ClusterIP
+    port: 8080
+  replicas: 10

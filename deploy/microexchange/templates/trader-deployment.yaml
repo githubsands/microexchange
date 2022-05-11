@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ Values.Trader.name }}
+  labels:
+    app: {{ Values.AppName }}
+
+spec:
+  replicas: 12
+  selector:
+    matchLabels:
+      app: {{ Values.AppName }}
+  template:
+    metadata:
+      labels:
+        app: {{ Values.Trader.name }}
+    spec:
+      containers:
+      - name:
+        image: localhost:5000/trader
+        imagePullPolicy: Never
+        ports:
+        - containerPort: {{ Values.Trader.service.port }}

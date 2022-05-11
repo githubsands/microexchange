@@ -1,0 +1,6 @@
+---
+asset: "BTC/ETH"
+orderbookrowsize: 30
+orderbookmaxprice: 30000
+orderbookserver: ":8080"
+trading: true

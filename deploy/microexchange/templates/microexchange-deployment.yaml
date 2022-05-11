@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ Values.MicroExchange.Name }}
+  labels:
+    app: {{ Values.AppName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ Values.AppName }}
+  template:
+    metadata:
+      labels:
+        app: {{ Values.AppName }}
+    spec:
+      containers:
+      - name:
+        image: localhost:5000/microexchange
+        imagePullPolicy: Never
+        ports:
+        - containerPort: {{ Values.MicroExchange.Service.Port }}
