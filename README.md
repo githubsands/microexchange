@@ -13,7 +13,7 @@ Microexchange is a monolith exchange implementation.  It is composed of 4 major 
 
 ## Future improvements
 
-1 complete clientManager
-2 tie dispatcher to clientManager
-3 provide main function - tie the components together
-4 provide fault tolerance through etcd, or 2 phase commits for completed trades. i.e . snapshot the database
+1. complete clientManager
+1. tie dispatcher to clientManager
+1. provide main function - tie the components together
+1. provide fault tolerance through etcd, or 2 phase commits for completed trades. i.e . snapshot the database
