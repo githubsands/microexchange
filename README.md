@@ -17,7 +17,7 @@ Microexchange is a monolith exchange implementation.  It is composed of 4 major 
 1. tie dispatcher to clientManager
 1. provide main function - tie the components together
 1. completed trades should be posted in sqlLite with some fault tolerance (two phase commits)
-1. cleanup linked-list implmentation (needs unsafe freepointers to replicate voyager's C implentation fully):
+1. cleanup linked-list implmentation (needs unsafe freepointers to fully replicate voyager's C implementation)
 
 ## Inspired by
 
