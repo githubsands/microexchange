@@ -1,6 +1,6 @@
 # Microexchange
 
-Microexchange is a monolith exchange implementation.  It is composed of 4 major components:
+Microexchange is a monolith exchange implementation.  It is composed of 5 major components:
 `orderserver`, `orderload`, `orderbook` `clientmanager`, `dispatcher`.
 
 The orderbook is the only thing working as is but lacks an industry standard matching algorithm. 
